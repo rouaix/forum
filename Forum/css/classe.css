@@ -1,0 +1,126 @@
+.fc1{background-color: #c5001a;}
+.fc2{background-color: #e4e3db;}
+.fc3{background-color: #113743;}
+.fc4{background-color: #c5beba;}
+
+.tc1{color: #c5001a;}
+.tc2{color: #e4e3db;}
+.tc3{color: #113743;}
+.tc4{color: #c5beba;}
+
+.saisirmessage form{
+    display:block;
+    width:100%;  
+    padding:5px;
+}
+
+.saisirmessage textarea{
+    display:block;
+    width:100%;
+    height:80px;
+}
+
+.saisirmessage input[type=submit]{
+    display: block;
+    width: 100%;
+    height:25px;
+    font-weight:500;
+    background-image: url("");
+    /*background-color: rgba(255,255,255,0.2);*/
+}
+
+div.saisirmessage{
+    display:block;
+    width:100%;
+    height:150px;
+    position:fixed;
+    bottom:25px;
+    padding:10px;
+    
+    font-weight:700;
+    
+    /*
+    border:1px solid rgba(202, 43, 14, 1);
+    background-color:rgba(202, 43, 14, 0.2);
+    */
+}
+
+.listemessage{
+    display:block;
+    overflow-x:hidden;
+    overflow-y: auto;
+    padding-bottom:100px;
+    background-color: #113743;
+}
+
+.message{
+    display:block;
+    margin:5px;
+    padding:5px;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.1);
+}
+.centre {
+    text-align: center;
+}
+.droite{text-align:right;}
+.marge {
+    margin: 5px;
+}
+.padding{padding:5px;}
+.block{display:block;}
+
+.inscription div {
+    display: inline-block;
+}
+
+.inscription input {
+    display: block;
+    margin: 10px;
+    text-align: center;
+}
+
+.inscription input[type=submit] {
+    display: inline-block;
+    float: right;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+img.forum {
+    margin:0;
+    height:100px;
+    float:left;
+}
+
+body.forum{
+    display: block;
+    width:100%;
+}
+article.forum{
+    display: block;
+    width:100%;
+    min-width: 300px;
+}
+aside.forum{
+    display:inline-block;
+    width:20%;
+    min-width: 200px;
+    
+}
+.forum section, .forum header{
+    display:block;
+    margin:0;
+    padding:0;
+    clear:both;
+}
+.forum header{
+    display:block;
+    height:100px;
+    overflow:hidden;
+}
+
+section.forum{
+    display:block;
+}
