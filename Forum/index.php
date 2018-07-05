@@ -18,7 +18,9 @@
 
     <body>
         <header><img src="./img/logo1280.jpg" id="logo" alt="" class="animated bounce" /></header>
-        <nav><?php if(file_exists("nav.php")){include("nav.php");}?></nav>
+        <nav>
+            <?php if(file_exists("nav.php")){include("nav.php");}?>
+        </nav>
         <article>
             <section>
                 <fieldset>
@@ -58,7 +60,7 @@
                     <legend>Liste des Catégories et sujets disponibles</legend>
                     <?php
                         if(isset($_SESSION["user"]["role"])){
-                            if(isset($_SESSION["user"]["role"]) != 4){
+                            if($_SESSION["user"]["role"] != 4){
                                 if(file_exists("inc_liste_categories.php")){include("inc_liste_categories.php");}
                             }else{
                                 echo "<p>Votre bannissement interdit toute consultation.</p>";

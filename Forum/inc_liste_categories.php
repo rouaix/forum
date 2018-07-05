@@ -3,7 +3,8 @@
     if(file_exists("inc_mysqli_connect.php")){include("inc_mysqli_connect.php");}
     $requete = "select * from categorie order by designation";
     //--------------------------------
-    
+    echo "<form>";
+    echo "<label for='categorie'>";
     echo "<h6>Les catégories et sujets</h6>";
     echo "<ul>";
     if ($resultat = $mysqli->query($requete)){
@@ -30,6 +31,8 @@
     echo "</ul>";
     //-------------------------------- 
 
+    echo "</form>";
+        
     mysqli_close($mysqli); 
 
 ?>

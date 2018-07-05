@@ -3,9 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 03 Juillet 2018 à 13:48
+-- Généré le :  Jeu 05 Juillet 2018 à 15:06
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,9 +19,6 @@
 --
 -- Base de données :  `forum`
 --
-
-CREATE DATABASE IF NOT EXISTS `forum` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `forum`;
 
 -- --------------------------------------------------------
 
@@ -48,13 +48,31 @@ INSERT INTO `categorie` (`categorie_id`, `designation`, `user_id`) VALUES
 
 CREATE TABLE `message` (
   `message_id` int(10) UNSIGNED NOT NULL,
-  `contenu` blob,
+  `contenu` longtext,
   `user_id` int(10) UNSIGNED DEFAULT NULL,
   `categorie_id` int(10) UNSIGNED DEFAULT NULL,
   `sujet_id` int(10) UNSIGNED DEFAULT NULL,
   `destinataire_id` int(10) UNSIGNED DEFAULT NULL,
-  `date` datetime DEFAULT NULL
+  `date` datetime DEFAULT NULL,
+  `pere_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `message`
+--
+
+INSERT INTO `message` (`message_id`, `contenu`, `user_id`, `categorie_id`, `sujet_id`, `destinataire_id`, `date`, `pere_id`) VALUES
+(47, 'Celui qui ne peut plus &eacute;prouver ni &eacute;tonnement ni surprise, est pour ainsi dire mort : ses yeux sont &eacute;teints.&lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
+(48, 'C&rsquo;est le devoir de chaque homme de rendre au monde au moins autant qu&rsquo;il en a re&ccedil;u.&lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
+(49, 'Deux choses sont infinies : l&rsquo;Univers et la b&ecirc;tise humaine. Mais en ce qui concerne l&rsquo;Univers, je n&rsquo;en ai pas encore acquis la certitude absolue. &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
+(50, 'La connaissance s&rsquo;acquiert par l&rsquo;exp&eacute;rience, tout le reste n&rsquo;est que de l&rsquo;information. &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
+(51, 'La folie, c&rsquo;est de faire toujours la m&ecirc;me chose et de s&rsquo;attendre &agrave; un r&eacute;sultat diff&eacute;rent. &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
+(52, 'La th&eacute;orie, c&rsquo;est quand on sait tout et que rien ne fonctionne. La pratique, c&rsquo;est quand tout fonctionne et que personne ne sait pourquoi. Ici, nous avons r&eacute;uni th&eacute;orie et pratique : Rien ne fonctionne&hellip; et personne ne sait pourquoi ! &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
+(53, 'Ce qu&rsquo;on appelle le bon sens est en fait l&rsquo;ensemble des id&eacute;es re&ccedil;ues qu&rsquo;on nous a inculqu&eacute;es jusqu&rsquo;&agrave; 18 ans. &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
+(54, 'Rencontre entre Charlie Chaplin et Albert Einstein&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;br /&gt;&mdash; Ce que j&rsquo;admire le plus dans votre art, dit Albert Eins&shy;tein c&rsquo;est son universalit&eacute;. Vous ne dites pas un mot, et pourtant le monde entier vous comprend.\r\n&lt;br /&gt;\r\n&lt;br /&gt;&mdash; C&rsquo;est vrai, r&eacute;plique Chaplin. Mais votre gloire est plus grande encore : le monde entier vous admire, alors que personne ne vous comprend.&raquo;', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
+(66, '&lt;p&gt;lkjlkjlj&lt;/p&gt;', 1, 1, 1, 7, '2018-07-05 00:00:00', 0),
+(67, '&lt;p&gt;lll&lt;/p&gt;', 1, 1, 1, 7, '2018-07-05 00:00:00', 0),
+(72, '&lt;p&gt;&lt;img src=&quot;js/tinymce/plugins/emoticons/img/smiley-tongue-out.png&quot; alt=&quot;tongue-out&quot; /&gt;&lt;/p&gt;', 1, 1, 1, 1, '2018-07-05 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -140,7 +158,12 @@ ALTER TABLE `categorie`
 --
 ALTER TABLE `message`
   ADD PRIMARY KEY (`message_id`),
-  ADD UNIQUE KEY `message_id_UNIQUE` (`message_id`);
+  ADD UNIQUE KEY `message_id_UNIQUE` (`message_id`),
+  ADD KEY `pere_id` (`pere_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `categorie_id` (`categorie_id`),
+  ADD KEY `sujet_id` (`sujet_id`),
+  ADD KEY `destinataire_id` (`destinataire_id`);
 
 --
 -- Index pour la table `role`
@@ -179,7 +202,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 --
 -- AUTO_INCREMENT pour la table `role`
 --
