@@ -1,74 +1,143 @@
-.fc1{background-color: #c5001a;}
-.fc2{background-color: #e4e3db;}
-.fc3{background-color: #113743;}
-.fc4{background-color: #c5beba;}
+div.nmenu{
+    display:inline-block;
+    margin:2px;
+    padding:0;    
+    overflow:hidden;
+    color:#fff;
+    border: 1px solid #fff;
+}
 
-.tc1{color: #c5001a;}
-.tc2{color: #e4e3db;}
-.tc3{color: #113743;}
-.tc4{color: #c5beba;}
-
-.saisirmessage form{
-    display:block;
-    width:100%;  
+.nmenu a,.nmenu a:link,.nmenu a:visited{
+    text-decoration: none;
+    color:#fff;
     padding:5px;
+    margin:0;
+    font-weight:600;
 }
 
-.saisirmessage textarea{
-    display:block;
-    width:100%;
-    height:80px;
+.fc1 {
+    background-color: #c5001a;
 }
 
-.saisirmessage input[type=submit]{
+.fc2 {
+    background-color: #e4e3db;
+}
+
+.fc3 {
+    background-color: #113743;
+}
+
+.fc4 {
+    background-color: #c5beba;
+}
+.fc5{
+    background-color: #333333;
+}
+.fc6{
+    background-color: #ffffff;
+}
+.tc1 {
+    color: #c5001a;
+}
+
+.tc2 {
+    color: #e4e3db;
+}
+
+.tc3 {
+    color: #113743;
+}
+
+.tc4 {
+    color: #c5beba;
+}
+.tc5 {
+    color: #333333;
+}
+.tc6 {
+    color: #ffffff;
+}
+.saisirmessage form {
     display: block;
     width: 100%;
-    height:25px;
-    font-weight:500;
-    background-image: url("");
-    /*background-color: rgba(255,255,255,0.2);*/
+    padding: 5px;
 }
 
-div.saisirmessage{
-    display:block;
-    width:100%;
-    height:150px;
-    position:fixed;
-    bottom:25px;
-    padding:10px;
-    
-    font-weight:700;
-    
+.saisirmessage textarea {
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+
+.saisirmessage input[type=submit] {
+    padding:5px;
+    width:100px;
+    margin-right:0px;
+    font-weight: 500;
+    background-image: url("");
+    background-color: #113743;
+    margin-top:5px;
+}
+
+div.saisirmessage {
+    display: block;
+    width: 100%;
+    height: 340px;
+    position: fixed;
+    bottom: 25px;
+    padding: 10px;
+
+    font-weight: 700;
+
     /*
     border:1px solid rgba(202, 43, 14, 1);
     background-color:rgba(202, 43, 14, 0.2);
     */
 }
 
-.listemessage{
-    display:block;
-    overflow-x:hidden;
+.listemessage {
+    display: block;
+    overflow-x: hidden;
     overflow-y: auto;
-    padding-bottom:100px;
-    background-color: #113743;
+    padding-bottom: 350px;
 }
 
-.message{
-    display:block;
-    margin:5px;
-    padding:5px;
+.message {
+    display: block;
+    margin: 5px;
+    padding: 5px;
     border: 1px solid #fff;
-    background-color: rgba(255,255,255,0.1);
+}
+.reponse{
+    margin-left:50px;
 }
 .centre {
     text-align: center;
 }
-.droite{text-align:right;}
+
+.droite {
+    text-align: right;
+}
+
+.juste {
+    text-align: justify;
+}
+
+.gauche {
+    text-align: left;
+}
+
 .marge {
     margin: 5px;
 }
-.padding{padding:5px;}
-.block{display:block;}
+
+.padding {
+    padding: 5px;
+}
+
+.block {
+    display: block;
+}
 
 .inscription div {
     display: inline-block;
@@ -89,38 +158,48 @@ div.saisirmessage{
 }
 
 img.forum {
-    margin:0;
-    height:100px;
-    float:left;
+    margin: 0;
+    height: 100px;
+    float: left;
 }
 
-body.forum{
+body.forum {
     display: block;
-    width:100%;
+    width: 100%;
 }
-article.forum{
+
+article.forum {
     display: block;
-    width:100%;
+    width: 100%;
     min-width: 300px;
 }
-aside.forum{
-    display:inline-block;
-    width:20%;
+
+aside.forum {
+    display: inline-block;
+    width: 20%;
     min-width: 200px;
-    
-}
-.forum section, .forum header{
-    display:block;
-    margin:0;
-    padding:0;
-    clear:both;
-}
-.forum header{
-    display:block;
-    height:100px;
-    overflow:hidden;
+
 }
 
-section.forum{
-    display:block;
+.forum section,
+.forum header {
+    display: block;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+.forum header {
+    height: 100px;
+    overflow: hidden;
+}
+
+.forum header div {
+    float: right;
+    height: 100px;
+    overflow: hidden;
+}
+
+section.forum {
+    display: block;
 }
