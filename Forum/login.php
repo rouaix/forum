@@ -67,7 +67,7 @@
             mysqli_close($mysqli); 
         } 
     }
-    echo "<script type='text/javascript'>document.location.replace('forum.php');</script>";      
+    echo "<script type='text/javascript'>document.location.replace('index.php');</script>";      
 ?>
 
     </body>

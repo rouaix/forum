@@ -11,15 +11,24 @@
         }
         unset($_GET);
     }
+
+    if(count($_POST)){
+        while (list($key, $val) = each($_POST)){
+          if($val!=""){
+            $_SESSION[$key]= $val;
+          }else{
+            //unset($_SESSION[$key]);
+          }
+        }
+        unset($_POST);
+    }
     
-    if(isset($_SESSION["user_id"]) && isset($_SESSION["message_id"]) && isset($_SESSION["page"])){
+    if(isset($_SESSION["user_id"])&& i sset($_SESSION["page"])){
         if(file_exists("inc_mysqli_connect.php")){include("inc_mysqli_connect.php");}
-        $requete = "delete from message where message_id = '".$_SESSION["message_id"]."'";
+        $requete = "delete from user where user_id = '".$_SESSION["user_id"]."'";
         $resultat = $mysqli->query($requete) or die ('Erreur '.$requete.' '.$mysqli->error);
         
-        unset($_SESSION["message_id"]);
-        unset($_SESSION["user_id"]);
-        
+        unset($_SESSION["user_id"]);    
         echo "<script type='text/javascript'>document.location.replace('".$_SESSION["page"].".php');</script>"; 
         
     mysqli_close($mysqli); 

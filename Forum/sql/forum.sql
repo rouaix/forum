@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 05 Juillet 2018 à 15:06
+-- Généré le :  Jeu 12 Juillet 2018 à 15:01
 -- Version du serveur :  5.7.11
 -- Version de PHP :  7.0.3
 
@@ -37,8 +37,8 @@ CREATE TABLE `categorie` (
 --
 
 INSERT INTO `categorie` (`categorie_id`, `designation`, `user_id`) VALUES
-(1, 'Informatique', 1),
-(2, 'Loisirs', 1);
+(1, 'forum', 1),
+(11, 'info', 1);
 
 -- --------------------------------------------------------
 
@@ -62,17 +62,12 @@ CREATE TABLE `message` (
 --
 
 INSERT INTO `message` (`message_id`, `contenu`, `user_id`, `categorie_id`, `sujet_id`, `destinataire_id`, `date`, `pere_id`) VALUES
-(47, 'Celui qui ne peut plus &eacute;prouver ni &eacute;tonnement ni surprise, est pour ainsi dire mort : ses yeux sont &eacute;teints.&lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
 (48, 'C&rsquo;est le devoir de chaque homme de rendre au monde au moins autant qu&rsquo;il en a re&ccedil;u.&lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
 (49, 'Deux choses sont infinies : l&rsquo;Univers et la b&ecirc;tise humaine. Mais en ce qui concerne l&rsquo;Univers, je n&rsquo;en ai pas encore acquis la certitude absolue. &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
 (50, 'La connaissance s&rsquo;acquiert par l&rsquo;exp&eacute;rience, tout le reste n&rsquo;est que de l&rsquo;information. &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
 (51, 'La folie, c&rsquo;est de faire toujours la m&ecirc;me chose et de s&rsquo;attendre &agrave; un r&eacute;sultat diff&eacute;rent. &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
-(52, 'La th&eacute;orie, c&rsquo;est quand on sait tout et que rien ne fonctionne. La pratique, c&rsquo;est quand tout fonctionne et que personne ne sait pourquoi. Ici, nous avons r&eacute;uni th&eacute;orie et pratique : Rien ne fonctionne&hellip; et personne ne sait pourquoi ! &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
-(53, 'Ce qu&rsquo;on appelle le bon sens est en fait l&rsquo;ensemble des id&eacute;es re&ccedil;ues qu&rsquo;on nous a inculqu&eacute;es jusqu&rsquo;&agrave; 18 ans. &lt;br /&gt;Albert Einstein', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
-(54, 'Rencontre entre Charlie Chaplin et Albert Einstein&lt;br /&gt;\r\n&lt;br /&gt;\r\n&lt;br /&gt;&mdash; Ce que j&rsquo;admire le plus dans votre art, dit Albert Eins&shy;tein c&rsquo;est son universalit&eacute;. Vous ne dites pas un mot, et pourtant le monde entier vous comprend.\r\n&lt;br /&gt;\r\n&lt;br /&gt;&mdash; C&rsquo;est vrai, r&eacute;plique Chaplin. Mais votre gloire est plus grande encore : le monde entier vous admire, alors que personne ne vous comprend.&raquo;', 1, 1, 1, 0, '2018-07-05 00:00:00', 0),
-(66, '&lt;p&gt;lkjlkjlj&lt;/p&gt;', 1, 1, 1, 7, '2018-07-05 00:00:00', 0),
-(67, '&lt;p&gt;lll&lt;/p&gt;', 1, 1, 1, 7, '2018-07-05 00:00:00', 0),
-(72, '&lt;p&gt;&lt;img src=&quot;js/tinymce/plugins/emoticons/img/smiley-tongue-out.png&quot; alt=&quot;tongue-out&quot; /&gt;&lt;/p&gt;', 1, 1, 1, 1, '2018-07-05 00:00:00', 0);
+(116, '&lt;p&gt;&lt;img src=&quot;js/tinymce/plugins/emoticons/img/yell.png&quot; alt=&quot;yell&quot; /&gt;&lt;/p&gt;', 1, 1, 1, 0, '2018-07-12 00:00:00', 0),
+(117, '&lt;p&gt;Je suis un ALIEN !&lt;/p&gt;', 1, 1, 1, 0, '2018-07-12 00:00:00', 116);
 
 -- --------------------------------------------------------
 
@@ -113,8 +108,12 @@ CREATE TABLE `sujet` (
 --
 
 INSERT INTO `sujet` (`sujet_id`, `designation`, `categorie_id`, `user_id`) VALUES
-(1, 'Open Bar', 2, 1),
-(2, 'Les logiciels', 1, 1);
+(1, 'open bar', 1, 1),
+(14, 'Open Bar', 11, 1),
+(15, 'Open Bar', 12, 1),
+(16, 'Open Bar', 13, 1),
+(17, 'Open Bar', 13, 1),
+(18, 'Open Bar', 15, 1);
 
 -- --------------------------------------------------------
 
@@ -140,7 +139,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `pseudo`, `prenom`, `nom`, `mail`, `role_id`, `motdepasse`, `naissance`, `inscription`) VALUES
 (1, 'root', 'daniel', 'rouaix', 'daniel@rouaix.com', '1', '63a9f0ea7bb98050796b649e85481845', '1962-10-25', '2018-07-02'),
-(7, 'rouaix', 'daniel', 'rouaix', 'daniel@rouaix.net', '2', '03248b3e7454bd1b2243bfd33c6980f3', '1962-10-25', '2018-07-03');
+(7, 'rouaix', 'daniel', 'rouaix', 'daniel@rouaix.net', '3', '03248b3e7454bd1b2243bfd33c6980f3', '1962-10-25', '2018-07-03'),
+(8, 'createur', 'daniel', 'rouaix', 'createur@free.fr', '2', '03248b3e7454bd1b2243bfd33c6980f3', '1962-10-25', '2018-07-12');
 
 --
 -- Index pour les tables exportées
@@ -151,7 +151,8 @@ INSERT INTO `user` (`user_id`, `pseudo`, `prenom`, `nom`, `mail`, `role_id`, `mo
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`categorie_id`),
-  ADD UNIQUE KEY `categorie_id_UNIQUE` (`categorie_id`);
+  ADD UNIQUE KEY `categorie_id_UNIQUE` (`categorie_id`),
+  ADD UNIQUE KEY `designation` (`designation`);
 
 --
 -- Index pour la table `message`
@@ -197,12 +198,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `categorie_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `categorie_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT pour la table `message`
 --
 ALTER TABLE `message`
-  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 --
 -- AUTO_INCREMENT pour la table `role`
 --
@@ -212,12 +213,12 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT pour la table `sujet`
 --
 ALTER TABLE `sujet`
-  MODIFY `sujet_id` int(100) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `sujet_id` int(100) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

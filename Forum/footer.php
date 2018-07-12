@@ -1,4 +1,4 @@
 <?php echo ""; ?>
-<footer class="fc1">
-    &copy; Daniel & Michael 2018 
+<footer class="bg1 cblanc">
+    &copy; 2018 Daniel & Michael & Al Amin 
 </footer>
