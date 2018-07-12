@@ -29,15 +29,12 @@
     if(file_exists("inc_mysqli_connect.php")){include("inc_mysqli_connect.php");}
 
 
-    $requete = "select * from sujet where sujet.designation = '".encode_bdd(strtolower($_SESSION['newsujet']))."' and sujet.categorie_id ='".$_SESSION['categorie']."' ";
-    if ($resultat = $mysqli->query($requete)){
-        $_SESSION["alerte"] = "Sujet ingoré."; 
-    }else{
+
         $requete = "insert into sujet values (null, '".encode_bdd(strtolower($_SESSION['newsujet']))."', '".$_SESSION['categorie']."', '".$_SESSION['user']['id']."');";
         if ($resultat = $mysqli->query($requete)){
             //$_SESSION["alerte"] = "Sujet ajouté.";    
         }        
-    }
+
 
 
     unset($_SESSION['newsujet']);
