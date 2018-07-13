@@ -32,7 +32,7 @@
          if (substr($key,0,4) == "maj_"){
              $champs = substr($key,4); 
              if($champs != "motdepasse"){
-                $requete = "update user set ".$champs." = '".$val."' where user_id='".$_SESSION["user"]["id"]."'";
+                $requete = "update user set ".$champs." = '".encode_bdd($val)."' where user_id='".$_SESSION["user"]["id"]."'";
                 $resultat = $mysqli->query($requete) or die ('Erreur '.$requete.' '.$mysqli->error);                 
              }else{
                  if($val != ""){

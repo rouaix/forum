@@ -42,10 +42,10 @@
         if($resultat == 1){
                 
         $_SESSION["user"]["type"] = "Utilisateur";
-        $_SESSION["user"]["nom"] = strtoupper($_SESSION["nom"]);
-        $_SESSION["user"]["prenom"] = ucfirst($_SESSION["prenom"]);
-        $_SESSION["user"]["pseudo"] = ucfirst($_SESSION["pseudo"]);
-        $_SESSION["user"]["email"] = strtolower($_SESSION["mail"]);
+        $_SESSION["user"]["nom"] = encode_bdd(strtoupper($_SESSION["nom"]));
+        $_SESSION["user"]["prenom"] = encode_bdd(ucfirst($_SESSION["prenom"]);
+        $_SESSION["user"]["pseudo"] = encode_bdd(ucfirst($_SESSION["pseudo"]));
+        $_SESSION["user"]["email"] = encode_bdd(strtolower($_SESSION["mail"]);
         $_SESSION["user"]["role"] = $_SESSION["role_id"];
         $_SESSION["user"]["naissance"] = $_SESSION["naissance"];
         $_SESSION["user"]["inscription"] = $_SESSION["inscription"];   

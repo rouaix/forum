@@ -43,10 +43,10 @@
                     <form action="modif_profil.php" method="GET" name="modifprofilform" ENCTYPE="text/plain" class="inscription">
                        
                         <div>
-                        <input class="cnoir" type="text" name="maj_prenom" value="<?php echo $ligne["prenom"];?>">
-                        <input class="cnoir" type="text" name="maj_nom" value="<?php echo $ligne["nom"];?>">
-                        <input class="cnoir" type="text" name="maj_pseudo" value="<?php echo $ligne["pseudo"];?>">
-                        <input class="cnoir" type="email" name="maj_mail" value="<?php echo $ligne["mail"];?>">
+                        <input class="cnoir" type="text" name="maj_prenom" value="<?php echo decode_bdd($ligne["prenom"]);?>">
+                        <input class="cnoir" type="text" name="maj_nom" value="<?php echo decode_bdd($ligne["nom"]);?>">
+                        <input class="cnoir" type="text" name="maj_pseudo" value="<?php echo decode_bdd($ligne["pseudo"]);?>">
+                        <input class="cnoir" type="email" name="maj_mail" value="<?php echo decode_bdd($ligne["mail"]);?>">
                         <input class="cnoir" type="password" name="maj_motdepasse" value="">                                                
                         <label class="cnoir" for="naissance">* Votre date de naissance</label>
                         <input class="cnoir" type="date" name="maj_naissance" value="<?php echo $ligne["naissance"];?>">
