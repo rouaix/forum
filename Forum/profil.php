@@ -2,6 +2,7 @@
     if(!isset($_SESSION)){session_start();}
     if(file_exists("sys.php")){include("sys.php");}
     if(file_exists("action.php")){include("action.php");}
+    if(file_exists("securite.php")){include("securite.php");}
 ?>
     <!DOCTYPE html>
     <html>
