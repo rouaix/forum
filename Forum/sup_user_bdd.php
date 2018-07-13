@@ -23,13 +23,13 @@
         unset($_POST);
     }
     
-    if(isset($_SESSION["user_id"])&& i sset($_SESSION["page"])){
+    if(isset($_SESSION["user_id"])&& isset($_SESSION["page"])){
         if(file_exists("inc_mysqli_connect.php")){include("inc_mysqli_connect.php");}
         $requete = "delete from user where user_id = '".$_SESSION["user_id"]."'";
         $resultat = $mysqli->query($requete) or die ('Erreur '.$requete.' '.$mysqli->error);
         
         unset($_SESSION["user_id"]);    
-        echo "<script type='text/javascript'>document.location.replace('".$_SESSION["page"].".php');</script>"; 
+        echo "<script type='text/javascript'>document.location.replace('admin.php');</script>"; 
         
     mysqli_close($mysqli); 
 }
