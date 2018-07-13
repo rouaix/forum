@@ -3,7 +3,7 @@
 
     if(file_exists("sys.php")){include("sys.php");}
     if(file_exists("action.php")){include("action.php");}
-    
+    if(file_exists("securite.php")){include("securite.php");}
     $_SESSION["page"] = "admin";
 ?>
 <!DOCTYPE html>

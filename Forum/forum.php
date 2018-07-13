@@ -30,6 +30,7 @@
 
     if(file_exists("sys.php")){include("sys.php");}
     if(file_exists("action.php")){include("action.php");}
+    if(file_exists("securite.php")){include("securite.php");}
 
     if(!isset($_SESSION["categorie"])){$_SESSION["categorie"] = 1;}
     if(!isset($_SESSION["sujet"])){$_SESSION["sujet"] = 1;}
